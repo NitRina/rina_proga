@@ -1,25 +1,61 @@
 import random
 
-def sub():
-    with open('sub.txt',encoding='utf-8') as f:
+def sub_m():
+    with open('sub_m.txt',encoding='utf-8') as f:       
         words = f.read()
         word = words.split('\n')
         return random.choice(word)
 
-def verb():
-    with open('verb.txt',encoding='utf-8') as f:
+def sub_f():
+    with open('sub_f.txt',encoding='utf-8') as f:       
         words = f.read()
         word = words.split('\n')
         return random.choice(word)
 
-def verb1():
-    with open('verb1.txt',encoding='utf-8') as f:
+def sub_pl():
+    with open('sub_pl.txt',encoding='utf-8') as f:       
         words = f.read()
         word = words.split('\n')
         return random.choice(word)
 
-def verb2():
-    with open('verb2.txt',encoding='utf-8') as f:
+def verb_pr_s():
+    with open('verb_pr_s.txt',encoding='utf-8') as f:
+        words = f.read()
+        word = words.split('\n')
+        return random.choice(word)
+
+def verb_pr_pl():
+    with open('verb_pr_pl.txt',encoding='utf-8') as f:
+        words = f.read()
+        word = words.split('\n')
+        return random.choice(word)
+
+def verb_imp():
+    with open('verb_imp.txt',encoding='utf-8') as f:
+        words = f.read()
+        word = words.split('\n')
+        return random.choice(word)
+
+def verb_past():
+    with open('verb_past.txt',encoding='utf-8') as f:
+        words = f.read()
+        word = words.split('\n')
+        return random.choice(word)
+
+def if_verb_m():
+    with open('if_verb_m.txt',encoding='utf-8') as f:
+        words = f.read()
+        word = words.split('\n')
+        return random.choice(word)
+
+def if_verb_f():
+    with open('if_verb_f.txt',encoding='utf-8') as f:
+        words = f.read()
+        word = words.split('\n')
+        return random.choice(word)
+
+def if_verb_pl():
+    with open('if_verb_pl.txt',encoding='utf-8') as f:
         words = f.read()
         word = words.split('\n')
         return random.choice(word)
@@ -42,60 +78,209 @@ def time():
         word = words.split('\n')
         return random.choice(word)
 
-def adj():
-    with open('adj.txt',encoding='utf-8') as f:
+def question():
+    with open('question.txt',encoding='utf-8') as f:
+        words = f.read()
+        word = words.split('\n')
+        return random.choice(word)
+
+def adj_m():
+    with open('adj_m.txt',encoding='utf-8') as f:
         words = f.read()
         word = words.split('\n')
         return random.choice(word)    
 
-def a():
-    sen1 = adj() + ' ' + sub() + ' ' + time() + ' ' + verb() +\
-           ' ' + obj() + ' в ' + loc() + '. '
-    sen1 = sen1.capitalize()
-    with open('text.txt', 'w', encoding='utf-8') as f:
-        f.write(sen1 + '\n')
+def adj_f():
+    with open('adj_f.txt',encoding='utf-8') as f:
+        words = f.read()
+        word = words.split('\n')
+        return random.choice(word)
 
-def b():
-    sen2 = adj() + ' ' + sub() + ' ' + time() + ' не ' + verb() +\
-           ' ' + obj() + ' в ' + loc() + '. '
-    sen2 = sen2.capitalize()
-    with open('text.txt', 'a', encoding='utf-8') as f:
-        f.write(sen2 + '\n')
+def adj_pl():
+    with open('adj_pl.txt',encoding='utf-8') as f:
+        words = f.read()
+        word = words.split('\n')
+        return random.choice(word) 
 
-def c():
-    sen3 = verb() + ' ли ' + adj() + ' ' + sub() + ' ' + time() + ' ' +\
-           ' ' + obj() + ' в ' + loc() + '? '
-    sen3 = sen3.capitalize()
-    with open('text.txt', 'a', encoding='utf-8') as f:
-        f.write(sen3 + '\n')
+def a1():
+    sen = adj_m() + ' ' + sub_m() + ' ' + time() + ' ' +\
+           verb_pr_s() + ' ' + obj() + ' в ' + loc() + '. '
+    sen = sen.capitalize()
+    with open('text1.txt', 'w', encoding='utf-8') as f:
+        f.write(sen + '\n')
 
-def d():
-    sen4 = time() + ' ' + verb1() + ' ' + obj() + ' в ' +\
-           loc() + ', ' + adj() + ' ' + sub() + '! '
-    sen4 = sen4.capitalize()
-    with open('text.txt', 'a', encoding='utf-8') as f:
-        f.write(sen4 + '\n')
+def a2():
+    sen = adj_f() + ' ' + sub_f() + ' ' + time() + ' ' +\
+           verb_pr_s() + ' ' + obj() + ' в ' + loc() + '. '
+    sen = sen.capitalize()
+    with open('text1.txt', 'w', encoding='utf-8') as f:
+        f.write(sen + '\n')
 
-def e():
-    sen5 = adj() + ' ' + sub() + ' ' + verb2() + ' бы ' +\
-           obj() + ' в ' + loc() + '. '
-    sen5 = sen5.capitalize()
-    with open('text.txt', 'a', encoding='utf-8') as f:
-        f.write(sen5)
+def a3():
+    sen = adj_pl() + ' ' + sub_pl() + ' ' + time() + ' ' +\
+           verb_pr_pl() + ' ' + obj() + ' в ' + loc() + '. '
+    sen = sen.capitalize()
+    with open('text1.txt', 'w', encoding='utf-8') as f:
+        f.write(sen + '\n')
 
-def text():
-    a()
-    b()
-    c()
-    d()
-    e()
+def b1():
+    sen = adj_m() + ' ' + sub_m() + ' ' + time() + ' не ' +\
+           verb_pr_s() + ' ' + obj() + ' в ' + loc() + '. '
+    sen = sen.capitalize()
+    with open('text1.txt', 'a', encoding='utf-8') as f:
+        f.write(sen + '\n')
+
+def b2():
+    sen = adj_f() + ' ' + sub_f() + ' ' + time() + ' не ' +\
+           verb_pr_s() + ' ' + obj() + ' в ' + loc() + '. '
+    sen = sen.capitalize()
+    with open('text1.txt', 'a', encoding='utf-8') as f:
+        f.write(sen + '\n')
+
+def b3():
+    sen = adj_pl() + ' ' + sub_pl() + ' ' + time() + ' не ' +\
+           verb_pr_pl() + ' ' + obj() + ' в ' + loc() + '. '
+    sen = sen.capitalize()
+    with open('text1.txt', 'a', encoding='utf-8') as f:
+        f.write(sen + '\n')
+
+def c1():
+    sen = verb_pr_s() + ' ли ' + adj_m() + ' ' + sub_m() + ' ' +\
+           time() + ' ' + ' ' + obj() + ' в ' + loc() + '? '
+    sen = sen.capitalize()
+    with open('text1.txt', 'a', encoding='utf-8') as f:
+        f.write(sen + '\n')
+
+def c2():
+    sen = verb_pr_s() + ' ли ' + adj_f() + ' ' + sub_f() + ' ' +\
+           time() + ' ' + ' ' + obj() + ' в ' + loc() + '? '
+    sen = sen.capitalize()
+    with open('text1.txt', 'a', encoding='utf-8') as f:
+        f.write(sen + '\n')
+
+def c3():
+    sen = verb_pr_pl() + ' ли ' + adj_pl() + ' ' + sub_pl() + ' ' +\
+           time() + ' ' + ' ' + obj() + ' в ' + loc() + '? '
+    sen = sen.capitalize()
+    with open('text1.txt', 'a', encoding='utf-8') as f:
+        f.write(sen + '\n')
+
+def c4():
+    sen = question() + adj_m() + ' ' + sub_m() + ' ' + time() +\
+           ' ' + verb_pr_s() + ' ' + obj() + ' в ' + loc() + '? '
+    sen = sen.capitalize()
+    with open('text1.txt', 'a', encoding='utf-8') as f:
+        f.write(sen + '\n')
+
+def c5():
+    sen = question() + adj_f() + ' ' + sub_f() + ' ' + time() +\
+           ' ' + verb_pr_s() + ' ' + obj() + ' в ' + loc() + '? '
+    sen = sen.capitalize()
+    with open('text1.txt', 'a', encoding='utf-8') as f:
+        f.write(sen + '\n')
+
+def c6():
+    sen = question() + adj_pl() + ' ' + sub_pl() + ' ' + time() +\
+           ' ' + verb_pr_pl() + ' ' + obj() + ' в ' + loc() + '? '
+    sen = sen.capitalize()
+    with open('text1.txt', 'a', encoding='utf-8') as f:
+        f.write(sen + '\n')
+
+def d1():
+    sen = time() + ' ' + verb_imp() + ' ' + obj() + ' в ' +\
+           loc() + ', ' + adj_m() + ' ' + sub_m() + '! '
+    sen = sen.capitalize()
+    with open('text1.txt', 'a', encoding='utf-8') as f:
+        f.write(sen + '\n')
+
+def d2():
+    sen = time() + ' ' + verb_imp() + ' ' + obj() + ' в ' +\
+           loc() + ', ' + adj_f() + ' ' + sub_f() + '! '
+    sen = sen.capitalize()
+    with open('text1.txt', 'a', encoding='utf-8') as f:
+        f.write(sen + '\n')
+
+def d3():
+    sen = time() + ' ' + verb_imp() + 'те ' + obj() + ' в ' +\
+           loc() + ', ' + adj_pl() + ' ' + sub_pl() + '! '
+    sen = sen.capitalize()
+    with open('text1.txt', 'a', encoding='utf-8') as f:
+        f.write(sen + '\n')
+
+def e1():
+    sen = adj_m() + ' ' + sub_m() + ' ' + verb_past() + ' бы ' +\
+           obj() + ' в ' + loc() + ', если бы ' + if_verb_m() + '. '
+    sen = sen.capitalize()
+    with open('text1.txt', 'a', encoding='utf-8') as f:
+        f.write(sen)
+        
+def e2():
+    sen = adj_f() + ' ' + sub_f() + ' ' + verb_past() + 'a бы ' +\
+           obj() + ' в ' + loc() + ', если бы ' + if_verb_f() + '. '
+    sen = sen.capitalize()
+    with open('text1.txt', 'a', encoding='utf-8') as f:
+        f.write(sen)
+
+def e3():
+    sen = adj_pl() + ' ' + sub_pl() + ' ' + verb_past() + 'и бы ' +\
+           obj() + ' в ' + loc() + ', если бы ' + if_verb_pl() + '. '
+    sen = sen.capitalize()
+    with open('text1.txt', 'a', encoding='utf-8') as f:
+        f.write(sen)
+
+def text1():
     
-    with open('text.txt',encoding='utf-8') as f:
+    centense1 = random.choice([1,2,3])
+    if centense1 == 1:
+        a1()
+    elif centense1 == 2:
+        a2()
+    else:
+        a3()
+        
+    centense2 = random.choice([1,2,3])
+    if centense2 == 1:
+        b1()
+    elif centense2 == 2:
+        b2()
+    else:
+        b3()
+        
+    centense3 = random.choice([1,2,3,4,5,6])
+    if centense3 == 1:
+        c1()
+    elif centense3 == 2:
+        c2()
+    elif centense3 == 3:
+        c3()
+    elif centense3 == 4:
+        c4()
+    elif centense3 == 5:
+        c5()
+    else:
+        c6()
+        
+    centense4 = random.choice([1,2,3])
+    if centense4 == 1:
+        d1()
+    elif centense4 == 2:
+        d2()
+    else:
+        d3()
+
+    centense5 = random.choice([1,2,3])
+    if centense5 == 1:
+        e1()
+    elif centense5 == 2:
+        e2()
+    else:
+        e3()
+    
+    with open('text1.txt',encoding='utf-8') as f:
         words = f.read()
         word = words.split('\n')
         random.shuffle(word)
         result = ''.join(word)
         print(result)
 
-text()
-
+text1()
